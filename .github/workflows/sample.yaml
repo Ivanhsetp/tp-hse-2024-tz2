@@ -1,7 +1,7 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-  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
+
 # Controls when the workflow will run
 on: [push, workflow_dispatch]
 
