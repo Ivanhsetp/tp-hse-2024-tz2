@@ -21,6 +21,9 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew build -x test
 
+      - name: Tests
+        run: ./gradlew test
+
       - name: Generate Jacoco report
         run: ./gradlew jacocoTestReport
 
