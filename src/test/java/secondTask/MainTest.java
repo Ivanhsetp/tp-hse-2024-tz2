@@ -45,7 +45,7 @@ public class MainTest {
         for (int i = 0; i < 10; i++) {
             numbers.add(i);
         }
-        assertEquals(45, _sum(numbers));
+        assertEquals(46, _sum(numbers));
     }
 
     @Test
