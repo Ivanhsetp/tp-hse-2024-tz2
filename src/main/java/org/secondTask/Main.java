@@ -19,7 +19,7 @@ public class Main {
 
     public static Integer _min(List<Integer> nums) {
         return nums.stream().mapToInt(v -> v).min().orElseThrow(NoSuchElementException::new);
-    
+    }
 
     public static Integer _max(List<Integer> nums) {
         return nums.stream().mapToInt(v -> v).max().orElseThrow(NoSuchElementException::new);
