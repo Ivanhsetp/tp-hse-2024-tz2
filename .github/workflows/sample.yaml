@@ -114,7 +114,8 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_ID }}
         run: |
-          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d text="Tests failed in the project" -d chat_id=${TELEGRAM_CHAT_ID}
+          failed_tests=$(grep -i "failed" test_output.txt | grep -v "Exception" | awk '{print $1}')
+          curl -s -X POST https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage -d text="Tests failed in the project. Failed tests: $failed_tests" -d chat_id=${TELEGRAM_CHAT_ID}
 
       - name: Check if all tests passed and send Telegram message
         if: ${{ success() }}
