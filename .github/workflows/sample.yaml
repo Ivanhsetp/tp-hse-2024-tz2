@@ -78,11 +78,7 @@
 
 
 name: Run Tests and Notify on Failure
-
-on:
-  push:
-    branches:
-      - main
+on: [push, workflow_dispatch]
 
 jobs:
   build:
