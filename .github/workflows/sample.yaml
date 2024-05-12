@@ -22,7 +22,7 @@
 #         run: ./gradlew build -x test
 
 #      # - name: Tests
-#      #  run: ./gradlew test
+#      #  run: ./gradlew test 
 
 #       - name: Generate Jacoco report
 #         run: ./gradlew jacocoTestReport
@@ -106,7 +106,7 @@ jobs:
         run: ./gradlew build -x test
 
       - name: Run tests with Gradle
-        run: ./gradlew test
+        run: ./gradlew test > test_output.txt
 
       - name: Check test results and send Telegram message
         if: ${{ failure() }}
